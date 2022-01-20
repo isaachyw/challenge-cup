@@ -1,9 +1,9 @@
-class AcGame {
+class ShuyaPlat {
     constructor(id) {
         this.id = id;
-        this.$ac_game = $('#' + id);
-        this.menu = new AcGameMenu(this);
-        this.mainpage = new AcGameMainPage(this);
+        this.$shuya_plat = $('#' + id);
+        this.menu = new ShuyaPlatMenu(this);
+        this.mainpage = new ShuyaPlatMainPage(this);
 
         this.start();
     }
