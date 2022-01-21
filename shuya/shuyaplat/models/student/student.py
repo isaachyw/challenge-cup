@@ -19,8 +19,8 @@ class Student(models.Model):
     ]
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=10, verbose_name="姓名")
-    vxnumber = models.CharField(max_length=50, verbose_name="微信号", blank=True)
-    qqnumber = models.CharField(max_length=20, verbose_name="qq号", blank=True)
+    vx_number = models.CharField(max_length=50, verbose_name="微信号", blank=True)
+    qq_number = models.CharField(max_length=20, verbose_name="qq号", blank=True)
     phone_number = models.IntegerField(default=0, verbose_name="手机号")
     area = models.CharField(max_length=10, verbose_name='所在省份')
     education = models.CharField(max_length=5, choices=YEAR_IN_SCHOOL_CHOICES, default=KINDERGARTEN)

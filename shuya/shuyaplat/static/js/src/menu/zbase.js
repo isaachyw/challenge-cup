@@ -18,6 +18,7 @@ class ShuyaPlatMenu{
     </div>
 </div>     
         `);
+        this.$menu.hide();
         this.root.$shuya_plat.append(this.$menu);
         this.$chat = this.$menu.find('.shuya-plat-menu-field-item-chat');
         this.$video = this.$menu.find('.shuya-plat-menu-field-item-video');
