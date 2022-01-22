@@ -13,7 +13,7 @@ class ShuyaPlatMenu{
         </div>
         <br>
         <div class="shuya-plat-menu-field-item shuya-plat-menu-field-item-settings">
-            设置（修改信息）
+            退出
         </div>
     </div>
 </div>     
@@ -40,7 +40,7 @@ class ShuyaPlatMenu{
             console.log("click video");
         });
         this.$settings.click(function(){
-            console.log("click settings");
+            outer.root.settings.logout_on_remote();
         });
     }
 

@@ -32,10 +32,10 @@ class Settings{
         </div>
         <br>
         <div class="shuya-plat-settings-acwing">
-            <img width="30" src="https://app165.acapp.acwing.com.cn/static/image/settings/acwing_logo.png">
+            <img width="30" src="https://gss0.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/7acb0a46f21fbe096ec2c53866600c338744ad79.jpg">
             <br>
             <div>
-                AcWing一键登录
+                微信一键登录
             </div>
         </div>
     </div>
@@ -140,7 +140,7 @@ class Settings{
         let outer = this;
         $.ajax(
             {
-                url:"127.0.0.1:8000/settings/getinfo/",
+                url:"http://127.0.0.1:8000/settings/getinfo/",
                 type:"GET",
                 data:{
                     platform:outer.platform
@@ -174,6 +174,66 @@ class Settings{
     show(){
         this.$settings.show();
     }
+    login_on_remote() {  // 在远程服务器上登录
+        let outer = this;
+        let username = this.$login_username.val();// 取出input的值
+        let password = this.$login_password.val();
+        this.$login_error_message.empty();
 
+        $.ajax({
+            url: "http://127.0.0.1:8000/settings/login/", //对该页面发送请求
+            type: "GET",
+            data: {
+                username: username,
+                password: password,
+            },
+            success: function(resp) {
+                console.log(resp);
+                if (resp.result === "success") {
+                    location.reload();
+                } else {
+                    outer.$login_error_message.html(resp.result);
+                }
+            }
+        });
+    }
+
+    logout_on_remote() {  // 在远程服务器上登出
+        $.ajax({
+            url: "http://127.0.0.1:8000/settings/logout/",
+            type: "GET",
+            success: function(resp) {
+                console.log(resp);
+                if (resp.result === "success") {
+                    location.reload();
+                }
+            }
+        });
+    }
+    register_on_remote() {  // 在远程服务器上注册
+        let outer = this;
+        let username = this.$register_username.val();
+        let password = this.$register_password.val();
+        let password_confirm = this.$register_password_confirm.val();
+        this.$register_error_message.empty();
+
+        $.ajax({
+            url: "http://127.0.0.1:8000/settings/register/",
+            type: "GET",
+            data: {
+                username: username,
+                password: password,
+                password_confirm: password_confirm,
+            },
+            success: function(resp) {
+                console.log(resp);
+                if (resp.result === "success") {
+                    location.reload();  // 刷新页面
+                } else {
+                    outer.$register_error_message.html(resp.result);
+                }
+            }
+        });
+    }
 }
 
