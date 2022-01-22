@@ -7,7 +7,6 @@ class ShuyaPlat {
         this.mainpage = new ShuyaPlatMainPage(this);
         this.start();
     }
-
     start() {
     }
 }

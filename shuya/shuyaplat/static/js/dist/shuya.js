@@ -19,7 +19,56 @@ class ShuyaPlatMainPage {
     hide() {  // 关闭playground界面
         this.$mainpage.hide();
     }
-}class ShuyaPlatMenu{
+}class Settings{
+    constructor(root) {
+        this.root = root;
+        this.platform = "WEB";
+        this.start()
+    }
+
+
+    start(){
+        this.getinfo();
+    }
+    getinfo(){
+        let outer = this;
+        $.ajax(
+            {
+                url:"http://127.0.0.1:8000/settings/getinfo/",
+                type:"GET",
+                data:{
+                    platform:outer.platform
+                },
+                success:function (resp) {
+                    console.log(resp);
+                    if(resp.result==="success"){
+                        outer.hide();
+                        outer.root.menu.show()
+                    }
+                    else {
+                        outer.login();
+                        console.log("fail")
+                    }
+                }
+            }
+        )
+    }
+    register(){
+
+    }
+    login(){
+
+    }
+    hide(){
+
+    }
+    show(){
+
+    }
+
+}
+
+class ShuyaPlatMenu{
     constructor(root) {
         this.root = root ;
         this.$menu = $(`
@@ -39,6 +88,7 @@ class ShuyaPlatMainPage {
     </div>
 </div>     
         `);
+        this.$menu.hide();
         this.root.$shuya_plat.append(this.$menu);
         this.$chat = this.$menu.find('.shuya-plat-menu-field-item-chat');
         this.$video = this.$menu.find('.shuya-plat-menu-field-item-video');
@@ -71,13 +121,14 @@ class ShuyaPlatMainPage {
     hide() {  // 关闭menu界面
         this.$menu.hide();
     }
-}class ShuyaPlat {
+}
+class ShuyaPlat {
     constructor(id) {
         this.id = id;
         this.$shuya_plat = $('#' + id);
+        this.settings = new Settings(this);
         this.menu = new ShuyaPlatMenu(this);
         this.mainpage = new ShuyaPlatMainPage(this);
-
         this.start();
     }
 
