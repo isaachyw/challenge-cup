@@ -147,7 +147,7 @@ class ShuyaPlatMainPage {
             <img width="30" src="https://gss0.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/7acb0a46f21fbe096ec2c53866600c338744ad79.jpg">
             <br>
             <div>
-                AcWing一键登录
+                微信一键登录
             </div>
         </div>
     </div>
@@ -214,7 +214,7 @@ class ShuyaPlatMainPage {
         let outer = this;
         $.ajax(
             {
-                url:"http://127.0.0.1:8000/settings/getinfo/",
+                url:"http://42.192.204.229:8000/settings/getinfo/",
                 type:"GET",
                 data:{
                     platform:outer.platform
@@ -255,7 +255,7 @@ class ShuyaPlatMainPage {
         this.$login_error_message.empty();
 
         $.ajax({
-            url: "http://127.0.0.1:8000/settings/login/", //对该页面发送请求
+            url: "http://42.192.204.229:8000/settings/login/", //对该页面发送请求
             type: "GET",
             data: {
                 username: username,
@@ -274,7 +274,7 @@ class ShuyaPlatMainPage {
 
     logout_on_remote() {  // 在远程服务器上登出
         $.ajax({
-            url: "http://127.0.0.1:8000/settings/logout/",
+            url: "http://42.192.204.229:8000/settings/logout/",
             type: "GET",
             success: function(resp) {
                 console.log(resp);
@@ -292,7 +292,7 @@ class ShuyaPlatMainPage {
         this.$register_error_message.empty();
 
         $.ajax({
-            url: "http://127.0.0.1:8000/settings/register/",
+            url: "http://42.192.204.229:8000/settings/register/",
             type: "GET",
             data: {
                 username: username,
