@@ -5,7 +5,7 @@ class ShuyaPlatMenu{
     <div class="shuya-plat-menu">
     <div class="shuya-plat-menu-field">
         <div class="shuya-plat-menu-field-item shuya-plat-menu-field-item-chat">
-            交流
+            编辑个人信息
         </div>
         <br>
         <div class="shuya-plat-menu-field-item shuya-plat-menu-field-item-video">
