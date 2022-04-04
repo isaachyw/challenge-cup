@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login
 
 
 def signin(request):
-    data = request.GET
+    data = request.POST
     username = data.get('username')
     password = data.get('password')
     user = authenticate(username=username, password=password)

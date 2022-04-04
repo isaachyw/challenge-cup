@@ -5,7 +5,7 @@ from shuyaplat.models.student.student import Student
 
 
 def register(request):
-    data = request.GET
+    data = request.POST
     username = data.get("username", "").strip()
     password = data.get("password", "").strip()
     password_confirm = data.get("password_confirm", "").strip()

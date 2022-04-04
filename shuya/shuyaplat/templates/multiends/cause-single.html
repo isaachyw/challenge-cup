@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 
 <html lang="en">
@@ -9,13 +10,13 @@
     <meta name="keywords" content="">
     
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="css/ecss/css/styles-merged.css">
-    <link rel="stylesheet" href="css/ecss/css/style.min.css">
-    <link rel="stylesheet" href="css/ecss/css/custom.css">
+    <link rel="stylesheet" href="{% static 'css/styles-merged.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
     <!--[if lt IE 9]>
-      <script src="js/ejs/vendor/html5shiv.min.js"></script>
-      <script src="js/ejs/vendor/respond.min.js"></script>
+      <script src="{% static 'js/vendor/html5shiv.min.js' %}"></script>
+      <script src="{% static 'js/vendor/respond.min.js' %}"></script>
     <![endif]-->
   </head>
   <body>
@@ -37,7 +38,7 @@
             <ul class="nav navbar-nav navbar-right">
               <li><a href="index.html">Home</a></li>
               <li><a href="about.html">About Us</a></li>
-              <li><a href="news.html">News</a></li>
+              <li><a href="register.html">News</a></li>
               <li><a href="causes.html">Causes</a></li>
               <li class="dropdown">
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">Pages</a>
@@ -84,7 +85,7 @@
             <div class="col-md-4 col-sm-4 probootstrap-animate" data-animate-effect="fadeIn">
               <div class="probootstrap-image-text-block probootstrap-cause">
                 <figure>
-                  <img src="img/img_sm_1.jpg" alt="Free Bootstrap Template " class="img-responsive">
+                  <img src="{% static 'img/img_sm_1.jpg' %}" alt="Free Bootstrap Template " class="img-responsive">
                 </figure>
                 <div class="probootstrap-cause-inner">
                   <div class="progress">
@@ -111,20 +112,20 @@
               <p>The main cause of hunger in the world is poverty. Millions of people around the world are too poor to buy food. They lack the resources to grow food, arable land or the tools to harvest, process and store it. There are many causes of poverty, and they exacerbate the problem of world hunger. Wars and conflicts around the world, national wars, national civil wars, terrorism and other acts of violence can displace millions of people and drive people towards poverty and hunger.</p>
               <div class="row">
                 <div class="col-md-6">
-                  <p><a href="img/img_sq_6.jpg" class="image-popup"><img src="img/img_sq_6.jpg" alt="Free Bootstrap Template " class="img-responsive"></a></p>
+                  <p><a href="{% static 'img/img_sq_6.jpg' %}" class="image-popup"><img src="{% static 'img/img_sq_6.jpg' %}" alt="Free Bootstrap Template " class="img-responsive"></a></p>
                 </div>
                 <div class="col-md-6">
-                  <p><a href="img/img_sq_6.jpg" class="image-popup"><img src="img/img_sq_5.jpg" alt="Free Bootstrap Template " class="img-responsive"></a></p>
+                  <p><a href="{% static 'img/img_sq_6.jpg' %}" class="image-popup"><img src="{% static 'img/img_sq_5.jpg' %}" alt="Free Bootstrap Template " class="img-responsive"></a></p>
                 </div>
               </div>
               <p>Global hunger has worsened in recent years, mainly due to conflicts and droughts related to climate change, the United Nations said in a report released Thursday. The United Nations released the 2018 Sustainable Development Goals Report on the same day, assessing progress in the implementation of the 17 Sustainable Development Goals covered by the 2030 Agenda for Sustainable Development. The report says global hunger has worsened in recent years, after a long period of relief. The number of undernourished people in the world rose from 777m in 2015 to 815m in 2016, or from 10.6% to 11% of the global population, the report said. The main reasons for this change include conflicts and disasters such as drought, which are related to climate change.</p>
               <p>Globally, 151 million children under the age of five were stunted in 2017, while another 51 million were stunted and 38 million were overweight, the report said. In his foreword to the report, U.N. Secretary-General Antonio Guterres said 2030, the date for achieving the Sustainable Development Agenda, is just 12 years away, and called for "a sense of urgency" to be added to moving the agenda forward.</p>
               <div class="row">
                 <div class="col-md-6">
-                  <p><a href="img/img_sq_6.jpg" class="image-popup"><img src="img/img_sq_2.jpg" alt="Free Bootstrap Template " class="img-responsive"></a></p>
+                  <p><a href="{% static 'img/img_sq_6.jpg' %}" class="image-popup"><img src="{% static 'img/img_sq_2.jpg' %}" alt="Free Bootstrap Template " class="img-responsive"></a></p>
                 </div>
                 <div class="col-md-6">
-                  <p><a href="img/img_sq_6.jpg" class="image-popup"><img src="img/img_sq_3.jpg" alt="Free Bootstrap Template " class="img-responsive"></a></p>
+                  <p><a href="{% static 'img/img_sq_6.jpg' %}" class="image-popup"><img src="{% static 'img/img_sq_3.jpg' %}" alt="Free Bootstrap Template " class="img-responsive"></a></p>
                 </div>
               </div>
               <p> In September 2015, the 2030 Agenda for Sustainable Development was adopted at the UN Development Summit. The agenda includes 17 Sustainable Development Goals, which focus on poverty and hunger eradication, equity and justice, and the promotion of sustainable development.</p>
@@ -148,7 +149,7 @@
             <div class="col-md-3">
               <div class="probootstrap-donors text-center probootstrap-animate">
                 <figure class="media">
-                  <img src="img/person_6.jpg" alt="Free Bootstrap Template " class="img-responsive">
+                  <img src="{% static 'img/person_6.jpg' %}" alt="Free Bootstrap Template " class="img-responsive">
                 </figure>
                 <div class="text">
                   <h3>Zengzuo</h3>
@@ -159,7 +160,7 @@
             <div class="col-md-3">
               <div class="probootstrap-donors text-center probootstrap-animate">
                 <figure class="media">
-                  <img src="img/person_1.jpg" alt="Free Bootstrap Template " class="img-responsive">
+                  <img src="{% static 'img/person_1.jpg' %}" alt="Free Bootstrap Template " class="img-responsive">
                 </figure>
                 <div class="text">
                   <h3>Huangzilin</h3>
@@ -170,7 +171,7 @@
             <div class="col-md-3">
               <div class="probootstrap-donors text-center probootstrap-animate">
                 <figure class="media">
-                  <img src="img/person_5.jpg" alt="Free Bootstrap Template " class="img-responsive">
+                  <img src="{% static 'img/person_5.jpg' %}" alt="Free Bootstrap Template " class="img-responsive">
                 </figure>
                 <div class="text">
                   <h3>Xuhang</h3>
@@ -182,7 +183,7 @@
 
               <div class="probootstrap-donors text-center probootstrap-animate">
                 <figure class="media">
-                  <img src="img/person_7.jpg" alt="Free Bootstrap Template " class="img-responsive">
+                  <img src="{% static 'img/person_7.jpg' %}" alt="Free Bootstrap Template " class="img-responsive">
                 </figure>
                 <div class="text">
                   <h3>Wangzimin</h3>
@@ -242,9 +243,9 @@
         </div>
       </footer>
 
-    <script src="js/ejs/scripts.min.js"></script>
-    <script src="js/ejs/main.min.js"></script>
-    <script src="js/ejs/custom.js"></script>
+    <script src="{% static 'js/scripts.min.js' %}"></script>
+    <script src="{% static 'js/main.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
 
   </body>
 </html>

@@ -69,7 +69,9 @@ class ShuyaPlatMainPage {
     hide() {  // 关闭playground界面
         this.$mainpage.hide();
     }
-}class ShuyaPlatMenu{
+}
+
+class ShuyaPlatMenu{
     constructor(root) {
         this.root = root ;
         this.$menu = $(`
@@ -122,7 +124,9 @@ class ShuyaPlatMainPage {
     hide() {  // 关闭menu界面
         this.$menu.hide();
     }
-}class Settings{
+}
+
+class Settings{
     constructor(root) {
         this.root = root;
         this.platform = "WEB";
@@ -130,40 +134,7 @@ class ShuyaPlatMainPage {
 
         this.$settings = $(`
 <div class="shuya-plat-settings">
-    <div class="shuya-plat-settings-login">
-        <div class="shuya-plat-settings-title">
-            登录
-        </div>
-        <div class="shuya-plat-settings-username">
-            <div class="shuya-plat-settings-item">
-                <input type="text" placeholder="用户名">
-            </div>
-        </div>
-        <div class="shuya-plat-settings-password">
-            <div class="shuya-plat-settings-item">
-                <input type="password" placeholder="密码">
-            </div>
-        </div>
-        <div class="shuya-plat-settings-submit">
-            <div class="shuya-plat-settings-item">
-                <button>登录</button>
-            </div>
-        </div>
-        <div class="shuya-plat-settings-error-message">
-        </div>
-        <div class="shuya-plat-settings-option">
-            注册
-        </div>
-        <br>
-        <div class="shuya-plat-settings-acwing">
-            <img width="30" src="https://gss0.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/7acb0a46f21fbe096ec2c53866600c338744ad79.jpg">
-            <br>
-            <div>
-                微信一键登录
-            </div>
-        </div>
-    </div>
-    <div class="shuya-plat-settings-register">
+    <form class="shuya-plat-settings-register">
         <div class="shuya-plat-settings-title">
             注册
         </div>
@@ -200,7 +171,7 @@ class ShuyaPlatMainPage {
                 AcWing一键登录
             </div>
         </div>
-    </div>
+    </form>
 </div>
 `);
 
@@ -235,8 +206,8 @@ class ShuyaPlatMainPage {
     }
 
     add_listening_events() {// 监听登录和注册的时间
-        this.add_listening_events_login();
-        this.add_listening_events_register();
+        //this.add_listening_events_login();
+        //this.add_listening_events_register();
     }
 
     add_listening_events_login() {
@@ -298,29 +269,29 @@ class ShuyaPlatMainPage {
     show(){
         this.$settings.show();
     }
-    login_on_remote() {  // 在远程服务器上登录
-        let outer = this;
-        let username = this.$login_username.val();// 取出input的值
-        let password = this.$login_password.val();
-        this.$login_error_message.empty();
-
-        $.ajax({
-            url: "http://127.0.0.1:8000/settings/login/", //对该页面发送请求
-            type: "GET",
-            data: {
-                username: username,
-                password: password,
-            },
-            success: function(resp) {
-                console.log(resp);
-                if (resp.result === "success") {
-                    location.reload();
-                } else {
-                    outer.$login_error_message.html(resp.result);
-                }
-            }
-        });
-    }
+//    login_on_remote() {  // 在远程服务器上登录
+//        let outer = this;
+//        let username = this.$login_username.val();// 取出input的值
+//        let password = this.$login_password.val();
+//        this.$login_error_message.empty();
+//
+//        $.ajax({
+//            url: "http://127.0.0.1:8000/settings/login/", //对该页面发送请求
+//            type: "POST",
+//            data: {
+//                username: username,
+//                password: password,
+//            },
+//            success: function(resp) {
+//                console.log(resp);
+//                if (resp.result === "success") {
+//                    location.reload();
+//                } else {
+//                    outer.$login_error_message.html(resp.result);
+//                }
+//            }
+//        });
+//    }
 
     logout_on_remote() {  // 在远程服务器上登出
         $.ajax({
@@ -366,8 +337,8 @@ class ShuyaPlat {
         this.id = id;
         this.$shuya_plat = $('#' + id);
         this.settings = new Settings(this);
-        this.menu = new ShuyaPlatMenu(this);
-        this.mainpage = new ShuyaPlatMainPage(this);
+        //this.menu = new ShuyaPlatMenu(this);
+        //this.mainpage = new ShuyaPlatMainPage(this);
         this.start();
     }
     start() {
