@@ -1,0 +1,79 @@
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="https://cdn.acwing.com/static/jquery-ui-dist/jquery-ui.min.css">
+    <script src="https://cdn.acwing.com/static/jquery/js/jquery-3.3.1.min.js"></script>
+    <title>树芽-个人主页</title>
+    <link rel="stylesheet" href="{% static 'css/shuyaplat.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles-merged.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+</head>
+
+<body style="margin: 0">
+<nav class="navbar navbar-default probootstrap-navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="" title="uiCookies:Enlight">Enlight</a>
+        </div>
+
+        <div id="navbar-collapse" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ base_url }}/main_page/">主页</a></li>
+                <li class="active"><a href="">编辑信息</a></li>
+                <li><a href="">视频</a></li>
+                <li><a href="">联系我们</a></li>
+                <li><a href="">关于我们</a></li>
+                <li class="probootstra-cta-button last"><a href="donate.html" class="btn btn-primary">打赏</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--姓名，微信号，QQ号，手机号,省份， 教育：目前没写好！-->
+<div class="shuya-plat-edit">
+    <div class="shuya-plat-edit-title">
+        登记用户信息
+    </div>
+    <div class="shuya-plat-edit-name">
+        <div class="shuya-plat-settings-item">
+            <input type="text" placeholder="姓名">
+        </div>
+    </div>
+    <div class="shuya-plat-edit-wechat">
+        <div class="shuya-plat-settings-item">
+            <input type="text" placeholder="微信号">
+        </div>
+    </div>
+    <div class="shuya-plat-edit-qq">
+        <div class="shuya-plat-settings-item">
+            <input type="text" placeholder="qq号">
+        </div>
+    </div>
+    <div class="shuya-plat-edit-phone">
+        <div class="shuya-plat-settings-item">
+            <input type="text" placeholder="手机号">
+        </div>
+    </div>
+    <div class="shuya-plat-edit-place">
+        <div class="shuya-plat-settings-item">
+            <input type="text" placeholder="所在省份">
+        </div>
+    </div>
+    <div class="shuya-plat-edit-education">
+        <div class="shuya-plat-settings-item">
+            <input type="text" placeholder="教育程度">
+        </div>
+    </div>
+    <div class="shuya-plat-edit-option">
+        保存
+    </div>
+    <br>
+</div>
+</body>
